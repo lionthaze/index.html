@@ -1,2 +1,199 @@
-# Lion-Thaze
-Lion Thäze é um site de crochê autoral com peças artesanais elegantes, feitas à mão com cuidado e qualidade.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Thäze - Loja de Crochê</title>
+    <style>
+        /* Paleta de cores */
+        :root {
+            --principal: #E6C7C2; /* Champagne rosé */
+            --luxo: #D8C3A5; /* Dourado champagne */
+            --contraste: #8B6F61; /* Marrom claro */
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Fonte elegante e sofisticada */
+            margin: 0;
+            padding: 0;
+            background-color: var(--principal);
+            color: var(--contraste);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--luxo);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: var(--contraste);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: var(--contraste);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--principal);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--luxo);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background-image: linear-gradient(to right, var(--principal), var(--luxo));
+            color: var(--contraste);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .produto {
+            background-color: #fff;
+            border: 1px solid var(--luxo);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .produto h3 {
+            color: var(--contraste);
+        }
+
+        .produto p {
+            color: var(--luxo);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--luxo);
+            color: var(--contraste);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--contraste);
+            color: var(--principal);
+        }
+
+        .contato {
+            background-color: var(--luxo);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer {
+            background-color: var(--contraste);
+            color: var(--principal);
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lion Thäze</h1>
+        <p>Artesanato em Crochê Sofisticado</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <h2>Bem-vindo à Lion Thäze</h2>
+        <p>Descubra peças únicas de crochê, feitas com elegância e paixão. Cada item é uma obra de arte artesanal.</p>
+    </section>
+
+    <section id="produtos">
+        <h2 style="text-align: center; color: var(--contraste);">Nossos Produtos</h2>
+        <div class="produtos">
+            <div class="produto">
+                <img src="https://via.placeholder.com/300x200?text=Cachecol+de+Crochê" alt="Cachecol de Crochê">
+                <h3>Cachecol Elegante</h3>
+                <p>R$ 150,00</p>
+                <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Cachecol%20Elegante." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+            <div class="produto">
+                <img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa de Crochê">
+                <h3>Blusa Sofisticada</h3>
+                <p>R$ 250,00</p>
+                <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20comprar%20a%20Blusa%20Sofisticada." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+            <div class="produto">
+                <img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu de Crochê">
+                <h3>Chapéu Luxuoso</h3>
+                <p>R$ 120,00</p>
+                <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Chapéu%20Luxuoso." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 style="text-align: center; color: var(--contraste);">Sobre Nós</h2>
+        <p style="text-align: center;">Na Lion Thäze, acreditamos que cada peça de crochê conta uma história. Com materiais premium e técnicas tradicionais, criamos itens que combinam conforto e elegância. Nossa missão é trazer um toque de luxo ao seu dia a dia.</p>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Para dúvidas, pedidos personalizados ou compras, fale conosco via WhatsApp.</p>
+        <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20Lion%20Thäze." class="btn-whatsapp">Falar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Lion Thäze. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
