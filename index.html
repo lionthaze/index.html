@@ -1,42 +1,267 @@
-<!-- HTML: Substitua a imagem única por isso -->
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="foto-atual.jpg" alt="Foto 1"></div>
-    <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Foto 2"></div>
-    <div class="swiper-slide"><img src="nova-foto2.jpg" alt="Foto 3"></div>
-    <!-- Adicione mais slides conforme necessário -->
-  </div>
-  <!-- Navegação opcional -->
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Thäze - Loja de Crochê</title>
+    <!-- Link para o CSS do Swiper (biblioteca para carrossel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Paleta de cores */
+        :root {
+            --principal: #E6C7C2; /* Champagne rosé */
+            --luxo: #D8C3A5; /* Dourado champagne */
+            --contraste: #8B6F61; /* Marrom claro */
+        }
 
-<!-- CSS básico (adicione ao seu arquivo CSS) -->
-.swiper-container {
-  width: 100%;
-  height: 300px; /* Ajuste conforme necessário */
-}
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-}
+        body {
+            font-family: 'Georgia', serif; /* Fonte elegante e sofisticada */
+            margin: 0;
+            padding: 0;
+            background-color: var(--principal);
+            color: var(--contraste);
+            line-height: 1.6;
+        }
 
-<!-- JavaScript (adicione ao final da página ou em um arquivo JS) -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper-container', {
-    loop: true, // Permite loop infinito
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay: 3000, // Opcional: troca automática a cada 3s
-    },
-  });
-</script>
+        header {
+            background-color: var(--luxo);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: var(--contraste);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: var(--contraste);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--principal);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--luxo);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background-image: linear-gradient(to right, var(--principal), var(--luxo));
+            color: var(--contraste);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .produto {
+            background-color: #fff;
+            border: 1px solid var(--luxo);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Estilos para o carrossel Swiper em todos os produtos */
+        .produto .swiper-container {
+            width: 100%;
+            height: 200px; /* Altura fixa para consistência */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .produto .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mantém a proporção da imagem */
+        }
+
+        /* Estilos para os indicadores (dots) do Swiper */
+        .produto .swiper-pagination {
+            bottom: 10px;
+        }
+
+        .produto .swiper-pagination-bullet {
+            background: var(--contraste);
+        }
+
+        .produto .swiper-pagination-bullet-active {
+            background: var(--luxo);
+        }
+
+        .produto h3 {
+            color: var(--contraste);
+        }
+
+        .produto p {
+            color: var(--luxo);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--luxo);
+            color: var(--contraste);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--contraste);
+            color: var(--principal);
+        }
+
+        .contato {
+            background-color: var(--luxo);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer {
+            background-color: var(--contraste);
+            color: var(--principal);
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lion Thäze</h1>
+        <p>Artesanato em Crochê Sofisticado</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <h2>Bem-vindo à Lion Thäze!🧶</h2>
+        <p>Descubra peças únicas de crochê, feitas com elegância e paixão. Cada item é uma obra de arte artesanal.</p>
+    </section>
+
+    <section id="produtos">
+        <h2 style="text-align: center; color: var(--contraste);">Nossos Produtos</h2>
+        <div class="produtos">
+            <div class="produto">
+                <!-- Carrossel para Caminho de Mesa -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="20251221_191838_0000.png" alt="Caminho de Mesa - Foto 1"></div>
+                        <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <h3>Caminho de Mesa</h3>
+                <p>R$ 35,00</p>
+                <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20o%20Caminho%20de%20Mesa%20Elegante." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+            <div class="produto">
+                <!-- Carrossel para Blusa Sofisticada -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <h3>Blusa Sofisticada</h3>
+                <p>R$ 250,00</p>
+                <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20a%20Blusa%20Sofisticada." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+            <div class="produto">
+                <!-- Carrossel para Chapéu Luxuoso -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <h3>Chapéu Luxuoso</h3>
+                <p>R$ 120,00</p>
+                <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20o%20Chapéu%20Luxuoso." class="btn-whatsapp">Comprar via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 style="text-align: center; color: var(--contraste);">Sobre Nós</h2>
+        <p style="text-align: center;">Na Lion Thäze, acreditamos que cada peça de crochê conta uma história. Com materiais premium e técnicas tradicionais, criamos itens que combinam conforto e elegância. Nossa missão é trazer um toque de luxo ao seu dia a dia.</p>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Para dúvidas, pedidos personalizados ou compras, fale conosco via WhatsApp.</p>
+        <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20Lion%20Thäze." class="btn-whatsapp">Falar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Lion Thäze. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script do Swiper e inicialização para todos os carrosséis -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializa todos os Swipers com a classe .swiper-container
+        const swipers = document.querySelectorAll('.swiper-container');
+        swipers.forEach(container => {
+            new Swiper(container, {
+                loop: true, // Loop infinito
+                pagination: {
+                    el: container.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000, // Troca automática a cada 3s
+                    disableOnInteraction: false,
+                },
+                grabCursor: true, // Cursor arrastável
+            });
+        });
+    </script>
+</body>
+  </html>
