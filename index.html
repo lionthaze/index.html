@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lion Thäze - Loja de Crochê</title>
+    <!-- Adicionado: Link para o CSS do Swiper (biblioteca para carrossel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         /* Paleta de cores */
         :root {
@@ -93,11 +95,31 @@
             transform: translateY(-5px);
         }
 
-        .produto img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: cover;
+        /* Modificado: Estilos para o carrossel Swiper no produto */
+        .produto .swiper-container {
+            width: 100%;
+            height: 200px; /* Altura fixa para consistência */
             border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .produto .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mantém a proporção da imagem */
+        }
+
+        /* Estilos para os indicadores (dots) do Swiper */
+        .produto .swiper-pagination {
+            bottom: 10px;
+        }
+
+        .produto .swiper-pagination-bullet {
+            background: var(--contraste);
+        }
+
+        .produto .swiper-pagination-bullet-active {
+            background: var(--luxo);
         }
 
         .produto h3 {
@@ -161,7 +183,17 @@
         <h2 style="text-align: center; color: var(--contraste);">Nossos Produtos</h2>
         <div class="produtos">
             <div class="produto">
-                <img src="20251221_191838_0000.png" alt="Imagem">
+                <!-- Modificado: Substituído a imagem única por um carrossel Swiper com múltiplas imagens -->
+                <!-- Você pode adicionar mais <div class="swiper-slide"> com imagens extras -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="20251221_191838_0000.png" alt="Caminho de Mesa - Foto 1"></div>
+                        <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></div> <!-- Substitua por sua nova imagem -->
+                        <!-- Exemplo: Adicione mais slides aqui, ex: <div class="swiper-slide"><img src="nova-foto2.jpg" alt="Caminho de Mesa - Foto 3"></div> -->
+                    </div>
+                    <!-- Indicadores (dots) para navegação -->
+                    <div class="swiper-pagination"></div>
+                </div>
                 <h3>Caminho de Mesa</h3>
                 <p>R$ 35,00</p>
                 <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20o%20Caminho%20de%20Mesa%20Elegante." class="btn-whatsapp">Comprar via WhatsApp</a>
@@ -195,5 +227,24 @@
     <footer>
         <p>&copy; 2023 Lion Thäze. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Adicionado: Script do Swiper e inicialização -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializa o Swiper para o carrossel do produto "Caminho de Mesa"
+        const swiper = new Swiper('.swiper-container', {
+            loop: true, // Permite loop infinito (volta ao início após a última imagem)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // Permite clicar nos dots para navegar
+            },
+            autoplay: {
+                delay: 3000, // Troca automática a cada 3 segundos (opcional, remova se não quiser)
+                disableOnInteraction: false, // Continua autoplay mesmo após interação
+            },
+            grabCursor: true, // Cursor de mão para indicar que é arrastável
+            // Suporte a swipe em dispositivos móveis e desktop
+        });
+    </script>
 </body>
-</html>
+    </html>
