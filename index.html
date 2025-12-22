@@ -6,7 +6,7 @@
     <title>Lion Thäze - Loja de Crochê</title>
     <!-- Link para o CSS do Swiper (biblioteca para carrossel) -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Adicionado: Link para o CSS do Magnific Popup (para visualização ampliada das imagens) -->
+    <!-- Link para o CSS do Magnific Popup (para visualização ampliada das imagens) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <style>
         /* Paleta de cores */
@@ -162,6 +162,36 @@
             text-align: center;
             padding: 20px;
         }
+
+        /* Customizações para o Magnific Popup (visualização ampliada) */
+        .mfp-bg {
+            background: rgba(230, 199, 194, 0.8) !important; /* Fundo semi-transparente com --principal */
+            opacity: 1;
+        }
+
+        .mfp-img {
+            border: 8px solid var(--luxo) !important; /* Borda elegante com --luxo */
+            border-radius: 10px; /* Bordas arredondadas para um visual mais "bonitinho" */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra suave */
+        }
+
+        .mfp-container {
+            padding: 20px; /* Espaçamento interno menor para "ampliar um pouquinho" */
+        }
+
+        .mfp-content {
+            max-width: 500px; /* Limita o tamanho máximo da imagem ampliada para não ser muito grande */
+            margin: 0 auto;
+        }
+
+        .mfp-close {
+            color: var(--contraste) !important; /* Cor do botão de fechar */
+            font-size: 30px;
+        }
+
+        .mfp-arrow {
+            color: var(--luxo) !important; /* Cor das setas de navegação */
+        }
     </style>
 </head>
 <body>
@@ -203,9 +233,9 @@
                 <!-- Carrossel para Blusa Sofisticada -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+de+Crochê" class="image-popup" title="Blusa Sofisticada - Foto 1"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></a></div>
-                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+Detalhe" class="image-popup" title="Blusa Sofisticada - Foto 2"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></a></div>
-                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+Modelo" class="image-popup" title="Blusa Sofisticada - Foto 3"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/500x400?text=Blusa+de+Crochê" class="image-popup" title="Blusa Sofisticada - Foto 1"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/500x400?text=Blusa+Detalhe" class="image-popup" title="Blusa Sofisticada - Foto 2"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/500x400?text=Blusa+Modelo" class="image-popup" title="Blusa Sofisticada - Foto 3"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></a></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
@@ -218,8 +248,8 @@
                 <!-- Carrossel para Chapéu Luxuoso -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Chapéu+de+Crochê" class="image-popup" title="Chapéu Luxuoso - Foto 1"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></a></div>
-                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Chapéu+Detalhe" class="image-popup" title="Chapéu Luxuoso - Foto 2"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/500x400?text=Chapéu+de+Crochê" class="image-popup" title="Chapéu Luxuoso - Foto 1"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/500x400?text=Chapéu+Detalhe" class="image-popup" title="Chapéu Luxuoso - Foto 2"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></a></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
@@ -247,4 +277,44 @@
     </footer>
 
     <!-- Script do Swiper e inicialização para todos os carrosséis -->
-    <script src="https://unpkg.com/s
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Script do Magnific Popup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery necessário para Magnific Popup -->
+    <script>
+        // Inicializa todos os Swipers com a classe .swiper-container
+        const swipers = document.querySelectorAll('.swiper-container');
+        swipers.forEach(container => {
+            new Swiper(container, {
+                loop: true, // Loop infinito
+                pagination: {
+                    el: container.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000, // Troca automática a cada 3s
+                    disableOnInteraction: false,
+                },
+                grabCursor: true, // Cursor arrastável
+            });
+        });
+
+        // Inicializa o Magnific Popup para todas as imagens com classe .image-popup
+        $('.image-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true, // Permite navegar entre imagens do mesmo produto
+                navigateByImgClick: true,
+                preload: [0, 1] // Pré-carrega imagens adjacentes
+            },
+            image: {
+                titleSrc: 'title' // Mostra o título da imagem
+            },
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            removalDelay: 300, // Animação suave
+            mainClass: 'mfp-fade' // Efeito de fade
+        });
+    </script>
+</body>
+    </html>
