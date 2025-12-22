@@ -6,6 +6,8 @@
     <title>Lion Thäze - Loja de Crochê</title>
     <!-- Link para o CSS do Swiper (biblioteca para carrossel) -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Adicionado: Link para o CSS do Magnific Popup (para visualização ampliada das imagens) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <style>
         /* Paleta de cores */
         :root {
@@ -107,6 +109,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover; /* Mantém a proporção da imagem */
+            cursor: pointer; /* Indica que é clicável */
         }
 
         /* Estilos para os indicadores (dots) do Swiper */
@@ -186,8 +189,8 @@
                 <!-- Carrossel para Caminho de Mesa -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="20251221_191838_0000.png" alt="Caminho de Mesa - Foto 1"></div>
-                        <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></div>
+                        <div class="swiper-slide"><a href="20251221_191838_0000.png" class="image-popup" title="Caminho de Mesa - Foto 1"><img src="20251221_191838_0000.png" alt="Caminho de Mesa - Foto 1"></a></div>
+                        <div class="swiper-slide"><a href="nova-foto1.jpg" class="image-popup" title="Caminho de Mesa - Foto 2"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></a></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
@@ -200,9 +203,9 @@
                 <!-- Carrossel para Blusa Sofisticada -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+de+Crochê" class="image-popup" title="Blusa Sofisticada - Foto 1"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+Detalhe" class="image-popup" title="Blusa Sofisticada - Foto 2"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Blusa+Modelo" class="image-popup" title="Blusa Sofisticada - Foto 3"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></a></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
@@ -215,8 +218,8 @@
                 <!-- Carrossel para Chapéu Luxuoso -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Chapéu+de+Crochê" class="image-popup" title="Chapéu Luxuoso - Foto 1"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></a></div>
+                        <div class="swiper-slide"><a href="https://via.placeholder.com/800x600?text=Chapéu+Detalhe" class="image-popup" title="Chapéu Luxuoso - Foto 2"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></a></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
@@ -244,24 +247,4 @@
     </footer>
 
     <!-- Script do Swiper e inicialização para todos os carrosséis -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Inicializa todos os Swipers com a classe .swiper-container
-        const swipers = document.querySelectorAll('.swiper-container');
-        swipers.forEach(container => {
-            new Swiper(container, {
-                loop: true, // Loop infinito
-                pagination: {
-                    el: container.querySelector('.swiper-pagination'),
-                    clickable: true,
-                },
-                autoplay: {
-                    delay: 3000, // Troca automática a cada 3s
-                    disableOnInteraction: false,
-                },
-                grabCursor: true, // Cursor arrastável
-            });
-        });
-    </script>
-</body>
-    </html>
+    <script src="https://unpkg.com/s
