@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lion Thäze - Loja de Crochê</title>
-    <!-- Adicionado: Link para o CSS do Swiper (biblioteca para carrossel) -->
+    <!-- Link para o CSS do Swiper (biblioteca para carrossel) -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         /* Paleta de cores */
@@ -95,7 +95,7 @@
             transform: translateY(-5px);
         }
 
-        /* Modificado: Estilos para o carrossel Swiper no produto */
+        /* Estilos para o carrossel Swiper em todos os produtos */
         .produto .swiper-container {
             width: 100%;
             height: 200px; /* Altura fixa para consistência */
@@ -183,15 +183,13 @@
         <h2 style="text-align: center; color: var(--contraste);">Nossos Produtos</h2>
         <div class="produtos">
             <div class="produto">
-                <!-- Modificado: Substituído a imagem única por um carrossel Swiper com múltiplas imagens -->
-                <!-- Você pode adicionar mais <div class="swiper-slide"> com imagens extras -->
+                <!-- Carrossel para Caminho de Mesa -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="20251221_191838_0000.png" alt="Caminho de Mesa - Foto 1"></div>
-                        <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></div> <!-- Substitua por sua nova imagem -->
-                        <!-- Exemplo: Adicione mais slides aqui, ex: <div class="swiper-slide"><img src="nova-foto2.jpg" alt="Caminho de Mesa - Foto 3"></div> -->
+                        <div class="swiper-slide"><img src="nova-foto1.jpg" alt="Caminho de Mesa - Foto 2"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
                     </div>
-                    <!-- Indicadores (dots) para navegação -->
                     <div class="swiper-pagination"></div>
                 </div>
                 <h3>Caminho de Mesa</h3>
@@ -199,13 +197,30 @@
                 <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20o%20Caminho%20de%20Mesa%20Elegante." class="btn-whatsapp">Comprar via WhatsApp</a>
             </div>
             <div class="produto">
-                <img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa de Crochê">
+                <!-- Carrossel para Blusa Sofisticada -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+de+Crochê" alt="Blusa Sofisticada - Foto 1"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Detalhe" alt="Blusa Sofisticada - Foto 2"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Blusa+Modelo" alt="Blusa Sofisticada - Foto 3"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
                 <h3>Blusa Sofisticada</h3>
                 <p>R$ 250,00</p>
                 <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20a%20Blusa%20Sofisticada." class="btn-whatsapp">Comprar via WhatsApp</a>
             </div>
             <div class="produto">
-                <img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu de Crochê">
+                <!-- Carrossel para Chapéu Luxuoso -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+de+Crochê" alt="Chapéu Luxuoso - Foto 1"></div>
+                        <div class="swiper-slide"><img src="https://via.placeholder.com/300x200?text=Chapéu+Detalhe" alt="Chapéu Luxuoso - Foto 2"></div>
+                        <!-- Adicione mais slides aqui se necessário -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
                 <h3>Chapéu Luxuoso</h3>
                 <p>R$ 120,00</p>
                 <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20comprar%20o%20Chapéu%20Luxuoso." class="btn-whatsapp">Comprar via WhatsApp</a>
@@ -228,22 +243,24 @@
         <p>&copy; 2023 Lion Thäze. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Adicionado: Script do Swiper e inicialização -->
+    <!-- Script do Swiper e inicialização para todos os carrosséis -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Inicializa o Swiper para o carrossel do produto "Caminho de Mesa"
-        const swiper = new Swiper('.swiper-container', {
-            loop: true, // Permite loop infinito (volta ao início após a última imagem)
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, // Permite clicar nos dots para navegar
-            },
-            autoplay: {
-                delay: 3000, // Troca automática a cada 3 segundos (opcional, remova se não quiser)
-                disableOnInteraction: false, // Continua autoplay mesmo após interação
-            },
-            grabCursor: true, // Cursor de mão para indicar que é arrastável
-            // Suporte a swipe em dispositivos móveis e desktop
+        // Inicializa todos os Swipers com a classe .swiper-container
+        const swipers = document.querySelectorAll('.swiper-container');
+        swipers.forEach(container => {
+            new Swiper(container, {
+                loop: true, // Loop infinito
+                pagination: {
+                    el: container.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000, // Troca automática a cada 3s
+                    disableOnInteraction: false,
+                },
+                grabCursor: true, // Cursor arrastável
+            });
         });
     </script>
 </body>
