@@ -159,114 +159,9 @@
             text-align: center;
             padding: 20px;
         }
-
-        /* Efeito de neve caindo no fundo */
-        .snow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1; /* Atrás de todo o conteúdo */
-            overflow: hidden;
-        }
-
-        .snowflake {
-            position: absolute;
-            color: #fff; /* Branco para contrastar com o fundo rosé */
-            font-size: 14px;
-            animation: fall linear infinite;
-            opacity: 0.8;
-        }
-
-        .snowflake:nth-child(odd) {
-            animation-duration: 10s;
-            animation-delay: -5s;
-        }
-
-        .snowflake:nth-child(even) {
-            animation-duration: 15s;
-            animation-delay: -10s;
-        }
-
-        .snowflake:nth-child(3n) {
-            animation-duration: 12s;
-            animation-delay: -7s;
-        }
-
-        .snowflake:nth-child(4n) {
-            animation-duration: 18s;
-            animation-delay: -12s;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        /* Botão de controle da música */
-        #musicControl {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--luxo);
-            color: var(--contraste);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: background-color 0.3s;
-        }
-
-        #musicControl:hover {
-            background-color: var(--contraste);
-            color: var(--principal);
-        }
     </style>
 </head>
 <body>
-    <!-- Adicionado: Container para os flocos de neve em movimento -->
-    <div class="snow">
-        <div class="snowflake" style="left: 10%; animation-duration: 10s;">❄</div>
-        <div class="snowflake" style="left: 20%; animation-duration: 15s;">❅</div>
-        <div class="snowflake" style="left: 30%; animation-duration: 12s;">❄</div>
-        <div class="snowflake" style="left: 40%; animation-duration: 18s;">❅</div>
-        <div class="snowflake" style="left: 50%; animation-duration: 14s;">❄</div>
-        <div class="snowflake" style="left: 60%; animation-duration: 16s;">❅</div>
-        <div class="snowflake" style="left: 70%; animation-duration: 11s;">❄</div>
-        <div class="snowflake" style="left: 80%; animation-duration: 13s;">❅</div>
-        <div class="snowflake" style="left: 90%; animation-duration: 17s;">❄</div>
-        <div class="snowflake" style="left: 5%; animation-duration: 19s;">❅</div>
-        <div class="snowflake" style="left: 15%; animation-duration: 10s;">❄</div>
-        <div class="snowflake" style="left: 25%; animation-duration: 15s;">❅</div>
-        <div class="snowflake" style="left: 35%; animation-duration: 12s;">❄</div>
-        <div class="snowflake" style="left: 45%; animation-duration: 18s;">❅</div>
-        <div class="snowflake" style="left: 55%; animation-duration: 14s;">❄</div>
-        <div class="snowflake" style="left: 65%; animation-duration: 16s;">❅</div>
-        <div class="snowflake" style="left: 75%; animation-duration: 11s;">❄</div>
-        <div class="snowflake" style="left: 85%; animation-duration: 13s;">❅</div>
-        <div class="snowflake" style="left: 95%; animation-duration: 17s;">❄</div>
-    </div>
-
-    <!-- Adicionado: Elemento de áudio para a música de Natal -->
-    <audio id="natalMusic" loop>
-        <source src="https://www.soundjay.com/misc/sounds/jingle-bells.mp3" type="audio/mpeg">
-        <!-- Substitua pelo link de uma música de Natal gratuita se necessário. Exemplo: https://www.bensound.com/royalty-free-music/track/jingle-bells -->
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-
-    <!-- Adicionado: Botão para controlar a música (tocar/pausar) -->
-    <button id="musicControl" title="Tocar/Pausar Música de Natal">🎵</button>
-
     <header>
         <h1>Lion Thäze</h1>
         <p>Artesanato em Crochê Sofisticado</p>
@@ -291,16 +186,17 @@
                 <!-- Carrossel para Caminho de Mesa -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="Caminho_de_Mesa_Vermelho_e_Branco_20251222_172603_0000.jpg" alt="Caminho de Mesa Vermelho e Branco - Foto 1"></div>
-                        <div class="swiper-slide"><img src="Caminho_de_Mesa_Vermelho_e_Branco_20251222_174811_1.jpg" alt="Caminho de Mesa Vermelho e Branco - Foto 2"></div>
+                        <div class="swiper-slide"><img src="Caminho_de_Mesa_Vermelho_e_Branco_20251222_172603_0000.jpg"> alt="Caminho de Mesa Vermelho e Branco - Foto 1"></div>
+                        <div class="swiper-slide"><img src="Caminho_de_Mesa_Vermelho_e_Branco_20251222_174811_1.jpg"> alt="Caminho de Mesa Vermelho e Branco - Foto 2"></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
                 <h3>Caminho de Mesa Vermelho e Branco</h3>
                 <p>R$ 25,00</p>
-                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">
+    Comprar via WhatsApp
+</a></div>
             <div class="produto">
                 <!-- Carrossel para Blusa Sofisticada -->
                 <div class="swiper-container">
@@ -314,91 +210,200 @@
                 </div>
                 <h3>Caminho de Mesa Rosa Grande</h3>
                 <p>R$ 70,00</p>
-                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">
+    Comprar via WhatsApp
+</a></div>
             <div class="produto">
                 <!-- Carrossel para Círculo de Mesa Verde Grande -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="Circulo_de_Mesa_Verde_Grande.png_20251222_180246_1.jpg" alt="Círculo de Mesa Verde Grande - Foto 1"></div>
-                        <div class="swiper-slide"><img src="Circulo_de_Mesa_Verde_Grande.png_20251222_180436_1.jpg" alt="Círculo de Mesa Verde Grande - Foto 2"></div>
+                        <div class="swiper-slide"><img src="Circulo_de_Mesa_Verde_Grande.png_20251222_180246_1.jpg" alt="Chapéu Luxuoso - Foto 1"></div>
+                        <div class="swiper-slide"><img src="Circulo_de_Mesa_Verde_Grande.png_20251222_180436_1.jpg" alt="Chapéu Luxuoso - Foto 2"></div>
                         <!-- Adicione mais slides aqui se necessário -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
                 <h3>Círculo de Mesa Verde Grande</h3>
                 <p>R$ 17,00</p>
-                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
-            <!-- PRODUTO 4 -->
-            <div class="produto">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="IMG_20251222_154641_4.jpg" alt="Produto 4 - Foto 1"></div>
-                        <div class="swiper-slide"><img src="Caminho de mesa branco _20251222_121011_4.jpg" alt="Produto 4 - Foto 2"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <h3>Caminho de Mesa Branco Modelo 1</h3>
-                <p>R$ 15,00</p>
-                <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+                <a href="https://wa.me/5533997305062?text=..." class="btn-whatsapp">
+    Comprar via WhatsApp
+</a>            </div>
+        <!-- PRODUTO 4 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="IMG_20251222_154641_4.jpg" alt="Produto 4 - Foto 1"></div>
+            <div class="swiper-slide"><img src="Caminho de mesa branco _20251222_121011_4.jpg" alt="Produto 4 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>Caminho de Mesa Branco Modelo 1</h3>
+    <p>R$ 15,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
 
-            <!-- PRODUTO 5 -->
-            <div class="produto">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="1_20251222_205721_0000.jpg" alt="Produto 5 - Foto 1"></div>
-                        <div class="swiper-slide"><img src="2_20251222_205722_2.jpg" alt="Produto 5 - Foto 2"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <h3>Caminho de Mesa Branco Modelo 2</h3>
-                <p>R$ 15,00</p>
-                <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+<!-- PRODUTO 5 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_205721_0000.jpg" alt="Produto 5 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_205722_2.jpg" alt="Produto 5 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>Caminho de Mesa Branco Modelo 2</h3>
+    <p>R$ 15,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
 
-            <!-- PRODUTO 6 -->
-            <div class="produto">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="1_20251222_210146_0000.jpg" alt="Produto 6 - Foto 1"></div>
-                        <div class="swiper-slide"><img src="2_20251222_210146_0001.jpg" alt="Produto 6 - Foto 2"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <h3>2 Unidades de Círculos Coloridos Grande e Pequeno</h3>
-                <p>R$ 37,00</p>
-                <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
-            <!-- PRODUTO 7 -->
-            <div class="produto">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="1_20251222_211922_0000.jpg" alt="Produto 7 - Foto 1"></div>
-                        <div class="swiper-slide"><img src="2_20251222_211922_0001.jpg" alt="Produto 7 - Foto 2"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <h3>5 unidades de Círculo alaranjado</h3>
-                <p>R$ 20,00</p>
-                <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+<!-- PRODUTO 6 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_210146_0000.jpg" alt="Produto 6 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_210146_0001.jpg" alt="Produto 6 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>2 Unidades de Círculos Coloridos Grande e Pequeno</h3>
+    <p>R$ 37,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+<!-- PRODUTO 7 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_211922_0000.jpg" alt="Produto 4 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_211922_0001.jpg" alt="Produto 4 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 unidades de Círculo alaranjado</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
 
-            <!-- PRODUTO 8 -->
-            <div class="produto">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="5_Círculos_Rosa_Pequenos_2.png_20251222_211737_0000.jpg" alt="Produto 8 - Foto 1"></div>
-                        <div class="swiper-slide"><img src="5_Círculos_Rosa_Pequenos_2.png_20251222_211738_0001.jpg" alt="Produto 8 - Foto 2"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <h3>5 Unidades de Círculo Rosa Pequeno Modelo 1</h3>
-                <p>R$ 20,00</p>
-                <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
-            </div>
+<!-- PRODUTO 8 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="5_Círculos_Rosa_Pequenos_2.png_20251222_211737_0000.jpg" alt="Produto 5 - Foto 1"></div>
+            <div class="swiper-slide"><img src="5_Círculos_Rosa_Pequenos_2.png_20251222_211738_0001.jpg" alt="Produto 5 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 Unidades de Círculo Rosa Pequeno Modelo 1</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
 
-            <!-- PRODUTO 9 -->
-            <div class="produto">
-                <div class="
+<!-- PRODUTO 9 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_211600_0000.jpg" alt="Produto 6 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_211600_0001.jpg" alt="Produto 6 - Foto 1"></div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 Unidades de Círculo Rosa pequeno Modelo 2</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+<!-- PRODUTO 10 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="5_Círculos_Nude_Pequenos.png_20251222_211406_0000.jpg" alt="Produto 4 - Foto 1"></div>
+            <div class="swiper-slide"><img src="5_Círculos_Nude_Pequenos.png_20251222_211407_0001.jpg" alt="Produto 4 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 unidades de Círculo Nude Pequeno</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+
+<!-- PRODUTO 11 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_210932_0000.jpg" alt="Produto 5 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_210933_0001.jpg" alt="Produto 5 - Foto 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 Unidades de Círculo Verde Pequeno</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+
+<!-- PRODUTO 12 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_211154_0000.jpg" alt="Produto 6 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_211155_0001.jpg" alt="Produto 6 - Foto 1"></div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>5 Unidades de Círculo Branco com Dourado Pequeno</h3>
+    <p>R$ 20,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+<!-- PRODUTO 13 -->
+<div class="produto">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="1_20251222_210428_0000.jpg" alt="Produto 6 - Foto 1"></div>
+            <div class="swiper-slide"><img src="2_20251222_210429_2.jpg" alt="Produto 6 - Foto 1"></div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <h3>2 Unidades de Círculos Coloridos com Bordas cor Laranja</h3>
+    <p>R$ 25,00</p>
+    <a href="https://wa.me/5533997305062" class="btn-whatsapp">Comprar via WhatsApp</a>
+</div>
+
+    </section>
+
+    <section id="sobre">
+        <h2 style="text-align: center; color: var(--contraste);">Sobre Nós</h2>
+        <p style="text-align: center;">Na Lion Thäze, acreditamos que cada peça de crochê conta uma história. Com materiais premium e técnicas tradicionais, criamos itens que combinam conforto e elegância. Nossa missão é trazer um toque de luxo ao seu dia a dia.</p>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Para dúvidas, pedidos personalizados ou compras, fale conosco via WhatsApp.</p>
+        <a href="https://wa.me/5533997305062?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20Lion%20Thäze." class="btn-whatsapp">Falar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Lion Thäze. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script do Swiper e inicialização para todos os carrosséis -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializa todos os Swipers com a classe .swiper-container
+        const swipers = document.querySelectorAll('.swiper-container');
+        swipers.forEach(container => {
+            new Swiper(container, {
+                loop: true, // Loop infinito
+                pagination: {
+                    el: container.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000, // Troca automática a cada 3s
+                    disableOnInteraction: false,
+                },
+                grabCursor: true, // Cursor arrastável
+            });
+        });
+    </script>
+</body>
+    </html>
