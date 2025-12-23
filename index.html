@@ -14,28 +14,7 @@
             --contraste: #8B6F61; /* Marrom claro */
         }
 
-        body {<!-- Container para os flocos de neve em movimento -->
-<div class="snow">
-    <div class="snowflake" style="left: 10%; animation-duration: 10s;">❄</div>
-    <div class="snowflake" style="left: 20%; animation-duration: 15s;">❅</div>
-    <div class="snowflake" style="left: 30%; animation-duration: 12s;">❄</div>
-    <div class="snowflake" style="left: 40%; animation-duration: 18s;">❅</div>
-    <div class="snowflake" style="left: 50%; animation-duration: 14s;">❄</div>
-    <div class="snowflake" style="left: 60%; animation-duration: 16s;">❅</div>
-    <div class="snowflake" style="left: 70%; animation-duration: 11s;">❄</div>
-    <div class="snowflake" style="left: 80%; animation-duration: 13s;">❅</div>
-    <div class="snowflake" style="left: 90%; animation-duration: 17s;">❄</div>
-    <div class="snowflake" style="left: 5%; animation-duration: 19s;">❅</div>
-    <div class="snowflake" style="left: 15%; animation-duration: 10s;">❄</div>
-    <div class="snowflake" style="left: 25%; animation-duration: 15s;">❅</div>
-    <div class="snowflake" style="left: 35%; animation-duration: 12s;">❄</div>
-    <div class="snowflake" style="left: 45%; animation-duration: 18s;">❅</div>
-    <div class="snowflake" style="left: 55%; animation-duration: 14s;">❄</div>
-    <div class="snowflake" style="left: 65%; animation-duration: 16s;">❅</div>
-    <div class="snowflake" style="left: 75%; animation-duration: 11s;">❄</div>
-    <div class="snowflake" style="left: 85%; animation-duration: 13s;">❅</div>
-    <div class="snowflake" style="left: 95%; animation-duration: 17s;">❄</div>
-</div>
+        body 
             font-family: 'Georgia', serif; /* Fonte elegante e sofisticada */
             margin: 0;
             padding: 0;
@@ -426,52 +405,6 @@
             });
         });
     </script>
-</body>/* Efeito de neve caindo no fundo */
-.snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1; /* Atrás de todo o conteúdo */
-    overflow: hidden;
-}
-
-.snowflake {
-    position: absolute;
-    color: #fff; /* Branco para contrastar com o fundo rosé */
-    font-size: 14px;
-    animation: fall linear infinite;
-    opacity: 0.8;
-}
-
-.snowflake:nth-child(odd) {
-    animation-duration: 10s;
-    animation-delay: -5s;
-}
-
-.snowflake:nth-child(even) {
-    animation-duration: 15s;
-    animation-delay: -10s;
-}
-
-.snowflake:nth-child(3n) {
-    animation-duration: 12s;
-    animation-delay: -7s;
-}
-
-.snowflake:nth-child(4n) {
-    animation-duration: 18s;
-    animation-delay: -12s;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
+</body>/
 }
     </html>
