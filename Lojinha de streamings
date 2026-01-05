@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MIMYY STORE — Loja de Streamings</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    *{box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+    body{
+        margin:0;
+        background:#000;
+        color:#fff;
+        background-size:cover;
+        background-attachment:fixed;
+        background-position:center;
+    }
+
+    header{
+        background:linear-gradient(180deg, #1a0004, #000);
+        padding:25px 15px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:15px;
+        border-bottom:2px solid #7a0016;
+    }
+
+    header img{
+        height:85px;
+    }
+
+    h1{
+        margin:0;
+        font-size:28px;
+        color:#ff1a2a;
+        letter-spacing:1px;
+    }
+
+    .container{
+        max-width:1100px;
+        margin:40px auto;
+        padding:0 15px;
+    }
+
+    .category{
+        margin-bottom:35px;
+        background:rgba(20,0,0,0.75);
+        border:1px solid #7a0016;
+        border-radius:14px;
+        padding:20px;
+        backdrop-filter: blur(3px);
+        box-shadow:0 0 18px rgba(120,0,25,0.5);
+    }
+
+    .category h2{
+        color:#ff2b3b;
+        border-left:6px solid #7a0016;
+        padding-left:10px;
+        margin-bottom:18px;
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+        gap:18px;
+    }
+
+    .product{
+        background:rgba(0,0,0,0.85);
+        border:1px solid #7a0016;
+        border-radius:14px;
+        padding:14px;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        transition:0.2s;
+    }
+
+    .product:hover{
+        transform:translateY(-4px);
+        box-shadow:0 0 22px rgba(180,0,35,0.6);
+    }
+
+    .product img{
+        width:100%;
+        height:130px;
+        object-fit:cover;
+        border-radius:10px;
+        border:1px solid #7a0016;
+        margin-bottom:10px;
+        background:#111;
+    }
+
+    .title{
+        font-weight:700;
+        color:#ff8790;
+        margin-bottom:6px;
+        display:flex;
+        align-items:center;
+        gap:6px;
+    }
+
+    .info{
+        font-size:14px;
+        color:#ddd;
+        margin-bottom:10px;
+        line-height:1.4;
+    }
+
+    .stock{color:#ff4455;}
+
+    .buy{
+        background:#7a0016;
+        border:none;
+        color:#fff;
+        padding:9px 0;
+        border-radius:10px;
+        font-weight:700;
+        cursor:pointer;
+        text-align:center;
+        text-decoration:none;
+        transition:0.2s;
+    }
+
+    .buy:hover{
+        background:#ff1a2a;
+    }
+
+    footer{
+        text-align:center;
+        padding:25px 10px;
+        color:#ccc;
+        background:#050000;
+        border-top:1px solid #7a0016;
+        margin-top:40px;
+    }
+</style>
+
+<script>
+// função para gerar link do whatsapp
+function comprar(produto){
+    const msg = encodeURIComponent("Olá! Tenho interesse em comprar: " + produto);
+    const telefone = "5533997305062";
+    window.location.href = "https://wa.me/" + telefone + "?text=" + msg;
+}
+</script>
+</head>
+
+<body style="background-image:url('SUA-IMAGEM-DE-FUNDO.jpg');">
+
+<header>
+        <img src="MIMYY-LOGO.jpg" alt="20260105_165145_0000.png" alt=""""">
+    <h1>MIMYY STORE</h1>
+</header>
+
+<div class="container">
+
+    <!-- 1 — NITRO LINK -->
+    <div class="category">
+        <h2><i class="fa-brands fa-discord"></i> NITRO LINK</h2>
+        <div class="grid">
+
+            <div class="product">
+                <img src="IMAGEM-PRODUTO.jpg" alt="">
+                <div class="title"><i class="fa-brands fa-discord"></i> Nitro Link trimestral</div>
+                <div class="info">Preço: R$ 6,99<br><span class="stock">Estoque: 70</span></div>
+                <a class="buy" onclick="comprar('Nitro Link trimestral')">Comprar</a>
+            </div>
+
+            <div class="product">
+                <img src="IMAGEM-PRODUTO.jpg" alt="">
+                <div class="title"><i class="fa-brands fa-discord"></i> Nitro Link mensal</div>
+                <div class="info">Preço: R$ 5,99<br><span class="stock">Estoque: 3</span></div>
+                <a class="buy" onclick="comprar('Nitro Link mensal')">Comprar</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2 — CONTA NITRADA -->
+    <div class="category">
+        <h2><i class="fa-brands fa-discord"></i> CONTA NITRADA</h2>
+        <div class="grid">
+
+            <div class="product">
+                <img src="IMAGEM-PRODUTO.jpg" alt="">
+                <div class="title"><i class="fa-brands fa-discord"></i> Conta nitrada trimestral</div>
+                <div class="info">Preço: R$ 15,90<br><span class="stock">Estoque: 0</span></div>
+                <a class="buy" onclick="comprar('Conta nitrada trimestral')">Comprar</a>
+            </div>
+
+            <div class="product">
+                <img src="IMAGEM-PRODUTO.jpg" alt="">
+                <div class="title"><i class="fa-brands fa-discord"></i> Conta nitrada mensal</div>
+                <div class="info">Preço: R$ 6,49<br><span class="stock">Estoque: 0</span></div>
+                <a class="buy" onclick="comprar('Conta nitrada mensal')">Comprar</a>
+            </div>
+
+            <div class="product">
+                <img src="IMAGEM-PRODUTO.jpg" alt="">
+                <div class="title"><i class="fa-brands fa-discord"></i> Conta virgem + 30 dias</div>
+                <div class="info">Preço: R$ 1,99<br><span class="stock">Estoque: 0</span></div>
+                <a class="buy" onclick="comprar('Conta virgem + 30 dias')">Comprar</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3 — CONTAS ANTIGAS -->
+    <div class="category">
+        <h2>CONTAS ANTIGAS</h2>
+        <div class="grid">
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg" alt=""><div class="title">Conta 2016</div><div class="info">R$ 59,90 — <span class="stock">Estoque: 0</span></div><a class="buy" onclick="comprar('Conta 2016')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg" alt=""><div class="title">Conta 2017</div><div class="info">R$ 24,90 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('Conta 2017')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg" alt=""><div class="title">Conta 2018</div><div class="info">R$ 18,90 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('Conta 2018')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg" alt=""><div class="title">Conta 2019</div><div class="info">R$ 13,90 — <span class="stock">Estoque: 0</span></div><a class="buy" onclick="comprar('Conta 2019')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg" alt=""><div class="title">Conta 2020</div><div class="info">R$ 10,90 — <span class="stock">Estoque: 0</span></div><a class="buy" onclick="comprar('Conta 2020')">Comprar</a></div>
+
+        </div>
+    </div>
+
+    <!-- 4 — ASSINATURAS -->
+    <div class="category">
+        <h2>ASSINATURAS</h2>
+        <div class="grid">
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Netflix</div><div class="info">R$ 7,99 — <span class="stock">Estoque: 5</span></div><a class="buy" onclick="comprar('Netflix')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Paramount</div><div class="info">R$ 8,49 — <span class="stock">Estoque: 2</span></div><a class="buy" onclick="comprar('Paramount')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Disney+</div><div class="info">R$ 8,49 — <span class="stock">Estoque: 2</span></div><a class="buy" onclick="comprar('Disney+')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">HBO Max</div><div class="info">R$ 8,99 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('HBO Max')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Crunchyroll</div><div class="info">R$ 6,49 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('Crunchyroll')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Amazon Prime</div><div class="info">R$ 6,49 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('Amazon Prime')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">YouTube Premium + Music</div><div class="info">R$ 8,49 — <span class="stock">Estoque: 1</span></div><a class="buy" onclick="comprar('YouTube Premium + Music')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Canva Pro 30 dias</div><div class="info">R$ 5,49 — <span class="stock">Estoque: 17</span></div><a class="buy" onclick="comprar('Canva Pro 30 dias')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Spotify 30 dias</div><div class="info">R$ 5,49 — <span class="stock">Estoque: 0</span></div><a class="buy" onclick="comprar('Spotify 30 dias')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Spotify 3 meses</div><div class="info">R$ 11,99 — <span class="stock">Estoque: 0</span></div><a class="buy" onclick="comprar('Spotify 3 meses')">Comprar</a></div>
+
+        </div>
+    </div>
+
+    <!-- 5 — IA’s -->
+    <div class="category">
+        <h2>IA’s</h2>
+        <div class="grid">
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">ChatGPT Go 12 meses</div><div class="info">R$ 18,90 — <span class="stock">Estoque: 4</span></div><a class="buy" onclick="comprar('ChatGPT Go 12 meses')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Google AI Pro 1 mês</div><div class="info">R$ 7,99 — <span class="stock">Estoque: 2</span></div><a class="buy" onclick="comprar('Google AI Pro 1 mês')">Comprar</a></div>
+
+            <div class="product"><img src="IMAGEM-PRODUTO.jpg"><div class="title">Perplexity mensal</div><div class="info">R$ 7,99 — <span class="stock">Estoque: 3</span></div><a class="buy" onclick="comprar('Perplexity mensal')">Comprar</a></div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 — MIMYY STORE — Todos os direitos reservados
+</footer>
+
+</body> 
+</html>
